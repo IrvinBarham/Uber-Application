@@ -23,6 +23,7 @@ header {
 	border: 5px black;
 	outline-style: solid;
 	outline-color: black;
+    float: right;
 }
 input[type=text], input[type=password] {
   width: 100%;
