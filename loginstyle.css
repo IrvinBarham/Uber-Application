@@ -1,0 +1,47 @@
+body { 
+	background-color: #4d4d4d
+}
+header {
+	margin: auto;
+	width: 85%;
+	height: auto;
+	background-color: #ff1a1a;
+	color: white;
+	text-align: left;
+	border: 2px white;
+	outline-style: solid;
+	outline-color: black;
+}
+
+.signin {
+	background-color: #ff1a1a;
+	width: 25%;
+	height: auto;
+	margin: auto;
+	color: white;
+	text-align: center;
+	border: 5px black;
+	outline-style: solid;
+	outline-color: black;
+}
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+button {
+  background-color: black;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
