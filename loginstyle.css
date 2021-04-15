@@ -1,5 +1,5 @@
 body { 
-	background-color: #4d4d4d
+	background-color: #4d4d4d;
 }
 header {
 	margin: auto;
@@ -17,13 +17,12 @@ header {
 	background-color: #ff1a1a;
 	width: 25%;
 	height: auto;
-	margin: auto;
+	margin-left: 850px;
 	color: white;
 	text-align: center;
 	border: 5px black;
 	outline-style: solid;
 	outline-color: black;
-    float: right;
 }
 input[type=text], input[type=password] {
   width: 100%;
