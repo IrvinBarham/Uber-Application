@@ -37,8 +37,9 @@ h1 {
 		<input type="text" id="Enter Username" name="userID" required>
 		<label for="key"><b>Password</b></label>
 		<input type="password" id="Enter Password" name="key" required>
-		<input type="submit" value="Submit">
+		<a href = "Home.html">
 		<button type="submit">Login</button>
+		</a>
 	</form>
 <script>
 	//List of Users
@@ -47,19 +48,16 @@ h1 {
 
 	var id = document.getElementById("userID")
 	var pass = document.getElementByID("key")
-	function validateSignIn (){
+	contractForm.addEvenListener("submit", function validateSignIn (){
 		flag = false;
 		for (i = 0; i < userIDdata.length; i++) {
 			if (id.compareTo(userIDdata[i]) == 0){
 				flag = true;
 			}
+			if (flag == true)
+				form.submit()
 		}
-		if (flag = true){
-			
-		}
-		else
-		print("Incorrect Login");
-	}
+	})
 
 </script>
 
