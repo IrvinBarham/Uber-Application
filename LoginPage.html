@@ -32,12 +32,37 @@ h1 {
 	<section id="login">
 	<div class="signin">
 		<h2> Sign in </h2>
+	<form>
 		<label for="userID"><b>Username</b></label>
-		<input type="text" placeholder="Enter Username" name="userID" required>
+		<input type="text" id="Enter Username" name="userID" required>
 		<label for="key"><b>Password</b></label>
-		<input type="password" placeholder="Enter Password" name="key" required>
-		
+		<input type="password" id="Enter Password" name="key" required>
+		<input type="submit" value="Submit">
 		<button type="submit">Login</button>
+	</form>
+<script>
+	//List of Users
+	let userIDdata = ['Irvin']
+	let userIDpass = ['123']
+
+	var id = document.getElementById("userID")
+	var pass = document.getElementByID("key")
+	function validateSignIn (){
+		flag = false;
+		for (i = 0; i < userIDdata.length; i++) {
+			if (id.compareTo(userIDdata[i]) == 0){
+				flag = true;
+			}
+		}
+		if (flag = true){
+			
+		}
+		else
+		print("Incorrect Login");
+	}
+
+</script>
+
 		<hr>
 		<h3> Not A Member? </h3>
 <!--Will add verfication to logins-->
