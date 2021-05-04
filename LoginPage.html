@@ -32,32 +32,40 @@ h1 {
 	<section id="login">
 	<div class="signin">
 		<h2> Sign in </h2>
-	<form>
+	<form onsubmit="return validateSignIn" method ="get">
 		<label for="userID"><b>Username</b></label>
 		<input type="text" id="Enter Username" name="userID" required>
 		<label for="key"><b>Password</b></label>
 		<input type="password" id="Enter Password" name="key" required>
-		<a href = "Home.html">
 		<button type="submit">Login</button>
-		</a>
 	</form>
 <script>
 	//List of Users
-	let userIDdata = ['Irvin']
-	let userIDpass = ['123']
+	let userIDdata = ['Irvin'];
+	let userPASSdata = ['123'];
 
 	var id = document.getElementById("userID")
 	var pass = document.getElementByID("key")
-	contractForm.addEvenListener("submit", function validateSignIn (){
-		flag = false;
+	function validateSignIn (){
+		flagID = false;
+		flagPass = false;
 		for (i = 0; i < userIDdata.length; i++) {
-			if (id.compareTo(userIDdata[i]) == 0){
-				flag = true;
-			}
-			if (flag == true)
-				form.submit()
+			if (id.compareTo(userIDdata[i]) == 0)
+				flagID = true;
 		}
-	})
+		for (i = 0; i < userPASSdata.length; i++){
+			if (pass.compareTo(userPASSdata[i] == 0))
+				flagPass = true;
+		}
+			if (flagID == true && flagPass == true) {
+				window.location.href = "Home.html";
+				return true;
+			}
+			else {
+				alert("Incorrect Login");
+				return false;
+			}
+	}
 
 </script>
 
