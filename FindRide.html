@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
 	<meta charset="UTF-8" />
 	<title>Find A Ride</title>	
@@ -10,19 +9,20 @@ body {
   background-attachment: fixed;
   font-family: Muli, sans-serif;
   font-size: 16px;
-  align-text: right;
 }
 
 h1 {
   font-family: "Space Mono", monospace;
   font-size: 46px;
   padding: 3px;
+  text-align: center;
 }
 
 h2 {
   font-family: "Space Mono", monospace;
   font-size: 36px;
   padding: 3px;
+  color: white;
 }
 
 </style>
@@ -30,20 +30,22 @@ h2 {
 <div class ="page">
 	<div id="head"> 
 		<header> 
-			<h1> Find A Ride </h1>
+			<h1>
+				<a href="Home.html"><strong>Home</strong></a>
+				<a href="UserProfile.html"><strong>Profile</strong></a>
+			</h1>
 		</header>
 </div>
 
 <iframe 
-  width="600"
-  height="450"
+  width= "500"
+  height="400"
   style="border:0"
   loading="lazy"
   allowfullscreen
   src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCo44KPJTp8X6JckgUd7YWUW3DCaNaERhs
-    &q=Space+Needle,Seattle+WA">
+    &q=Current Location">
 </iframe>
+<h2> Place A Trip.</h2>
 
 </div> 
-</body>
-</html>

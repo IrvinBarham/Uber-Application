@@ -2,12 +2,12 @@ body {
 	background-color: #262626;
 }
 header {
-	margin: auto;
-	width: 85%;
+	margin-left: auto;
+	width: 25%;
 	height: auto;
 	background-color: #ff1a1a;
 	color: white;
-	text-align: left;
+	text-align: center;
 	border: 2px white;
 	outline-style: solid;
 	outline-color: black;
