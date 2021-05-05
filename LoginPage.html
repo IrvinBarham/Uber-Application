@@ -23,6 +23,7 @@ h1 {
 
 </style>
 </head>
+<body>
 <div class = "loginPage">
 	<div id ="heading">
 	<header>
@@ -32,13 +33,13 @@ h1 {
 	<section id="login">
 	<div class="signin">
 		<h2> Sign in </h2>
-	<form onsubmit="return validateSignIn" method ="get">
+	<form onsubmit="return validateSignIn()" method ="get">
 		<label for="userID"><b>Username</b></label>
-		<input type="text" id="Enter Username" name="userID" required>
+		<input type="text" id="userID" name="userID" required>
 		<label for="key"><b>Password</b></label>
-		<input type="password" id="Enter Password" name="key" required>
+		<input type="password" id="key" name="key" required>
 		<button type="submit">Login</button>
-	</form>
+
 <script>
 	//List of Users
 	let userIDdata = ['Irvin'];
@@ -57,18 +58,18 @@ h1 {
 			if (pass.compareTo(userPASSdata[i] == 0))
 				flagPass = true;
 		}
-			if (flagID == true && flagPass == true) {
-				window.location.href = "Home.html";
-				return true;
+		if (flagID == true && flagPass == true) {
+			window.location.href = "Home.html";
+			return true;
 			}
-			else {
-				alert("Incorrect Login");
-				return false;
+		else {
+			alert("Incorrect Login");
+			return false;
 			}
 	}
 
 </script>
-
+</form>
 		<hr>
 		<h3> Not A Member? </h3>
 <!--Will add verfication to logins-->
