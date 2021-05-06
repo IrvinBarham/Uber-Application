@@ -1,4 +1,5 @@
 <!DOCTYPE HTML>  
+
 <html>
 <head>
 <style>
@@ -6,7 +7,27 @@
 </style>
 </head>
 <body>  
-
+<head>
+	<meta charset="UTF-8" />
+	<title> Rideshare | Login </title>
+	<link rel="stylesheet" href="loginstyle.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Space+Mono|Muli">
+<style>
+    
+body {
+  background-image: url('Uber-e1501253305999-916x515.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: Muli, sans-serif;
+  font-size: 16px;
+}
+h1 {
+  font-family: "Space Mono", monospace;
+  font-size: 46px;
+}
+</style>
+</head>
 <?php
 // define variables and set to empty values
 $usernameerr = $passworderr = "";
@@ -40,12 +61,13 @@ function test_input($data) {
 ?>
 
 <h2>Rideshare Login</h2>
+<h3>Please enter your username and password</h3>
 <p><span class="error">* required field</span></p>
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
-  username: <input type="text" name="username" value="<?php echo $username;?>">
+  Username: <input type="text" name="username" value="<?php echo $username;?>">
   <span class="error">* <?php echo $usernameerr;?></span>
   <br><br>
-  password: <input type="text" name="password" value="<?php echo $password;?>">
+  Password: <input type="text" name="password" value="<?php echo $password;?>">
   <span class="error">* <?php echo $passworderr;?></span>
   <br><br>
   <input type="submit" name="submit" value="Submit">  
