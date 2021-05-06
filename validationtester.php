@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
   } else {
     $username = test_input($_POST["username"]);
     // check if name only contains letters and whitespace
-    if (!preg_match("/^[a-zA-Z-' ]*$/",$name)) {
+    if (!preg_match("/^[a-zA-Z-' ]*$/",$username)) {
       $usernameerr = "Only letters and white space allowed";
     }
   }
