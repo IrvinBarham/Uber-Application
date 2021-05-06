@@ -59,8 +59,8 @@ body {font-family: "Lato", sans-serif;}
 
 
 <?php
-  $usersIDs = $GLOBALS array('user1');
-  $driverIDs = array('driver1', 'driver2');
+  $usersIDs = array('user1');
+  $driversIDs = array('driver1', 'driver2');
   $adminIDs = array('boss');
   $userKeys = array('1');
   $driverKeys = array('2');
@@ -69,6 +69,12 @@ body {font-family: "Lato", sans-serif;}
   $driverRatings = array('driver1' => 5,'driver2' => 1);
   $userRatings = array('user1' => 5);
 
+  $AnnualRev = 1000;
+
+  function calcRevenue($tripCost){
+    global $AnnualRev;
+     return "$" . $AnnualRev = $AnnualRev + $tripCost;
+  }
 
   function updateRatinguser($name, $rating){
     foreach ($userRatings as $key=> $score){
@@ -85,8 +91,8 @@ body {font-family: "Lato", sans-serif;}
     }
   }
 }
-?>
 
+?>
 <body>
 
 <h2>Administrator</h2>
@@ -97,7 +103,7 @@ body {font-family: "Lato", sans-serif;}
 <div class="tab">
   <button class="tablinks" onmouseover="administration(event, 'Dashboard')">Dashboard</button>
   <button class="tablinks" onmouseover="administration(event, 'Account Manager')">Account Manager</button>
-  <button class="tablinks" onmouseover="administration(event, 'Users')">Users</button>
+  <button class="tablinks" onmouseover="administration(event, 'Users')">List of Users</button>
   <button class="tablinks" onmouseover="administration(event, 'Ratings&Reviews')">Ratings</button>
   <button class="tablinks" onmouseover="administration(event, 'Scheduled Rides')">Scheduled Rides</button>
 </div>
@@ -105,6 +111,8 @@ body {font-family: "Lato", sans-serif;}
 <div id="Dashboard" class="tabcontent">
   <h3>Dashboard</h3>
   <p>Revenue</p>
+  <?php echo calcRevenue(100);
+  ?>
 </div>
 
 <div id="Account Manager" class="tabcontent">
@@ -115,17 +123,17 @@ body {font-family: "Lato", sans-serif;}
 <div id="Users" class="tabcontent">
   <h3>Users</h3>
   <ul>
-    <li>Users</li>]
+    <li>Users</li>
     <?php
-      foreach($userIDs as $item){
-        echo $item . ", ";
+      foreach($usersIDs as $i){
+        echo $i . ", ";
       }
     ?>
 
     <li>Drivers</li>
     <?php
-      foreach($driverIDs as $x){
-        echo $x . ", ";
+      foreach($driversIDs as $i){
+        echo $i . ", ";
       }
     ?>
   </ul> 
