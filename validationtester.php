@@ -73,6 +73,21 @@ function test_input($data) {
   <input type="submit" name="submit" value="Submit">  
 </form>
 
+<?php 
+if ($username = "user") 
+{
+    header('location: home.php');
+} 
+else if($username = "driver") 
+{
+    header('location: driverhomepage.php');
+}
+else if($username = "admin")
+{
+	header('location: adminhomepage.php');
+}
+?>
+
 <?php
 echo "<h2>Welcome</h2>";
 echo $username;
