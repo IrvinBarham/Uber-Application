@@ -1,8 +1,3 @@
-<?php
-  echo "hello";
-  $usersID = array('')
-?>
-
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -61,6 +56,37 @@ body {font-family: "Lato", sans-serif;}
 }
 </style>
 </head>
+
+
+<?php
+  $usersIDs = $GLOBALS array('user1');
+  $driverIDs = array('driver1', 'driver2');
+  $adminIDs = array('boss');
+  $userKeys = array('1');
+  $driverKeys = array('2');
+  $AdminIDs = array('3');
+
+  $driverRatings = array('driver1' => 5,'driver2' => 1);
+  $userRatings = array('user1' => 5);
+
+
+  function updateRatinguser($name, $rating){
+    foreach ($userRatings as $key=> $score){
+      if ($key == $name){
+        $userRatings[$key][$score] = $userRatings[$key][$rating]; 
+      }
+    }
+  }
+
+  function updateRatingdriver($name, $rating){
+    foreach($driverRating as $key => $score ){
+      if ($key == $name){
+        $dirverRatings[$key][$score] = $driverRatings[$key][$rating];
+    }
+  }
+}
+?>
+
 <body>
 
 <h2>Administrator</h2>
@@ -72,10 +98,8 @@ body {font-family: "Lato", sans-serif;}
   <button class="tablinks" onmouseover="administration(event, 'Dashboard')">Dashboard</button>
   <button class="tablinks" onmouseover="administration(event, 'Account Manager')">Account Manager</button>
   <button class="tablinks" onmouseover="administration(event, 'Users')">Users</button>
-  <button class="tablinks" onmouseover="administration(event, 'Map')">Map</button>
-  <button class="tablinks" onmouseover="administration(event, 'Ratings&Reviews')">Ratings & Reviews</button>
+  <button class="tablinks" onmouseover="administration(event, 'Ratings&Reviews')">Ratings</button>
   <button class="tablinks" onmouseover="administration(event, 'Scheduled Rides')">Scheduled Rides</button>
-  <button class="tablinks" onmouseover="administration(event, 'Payments')">Payments</button>
 </div>
 <!--Will add javascripts to handle data calculations for admin reports-->
 <div id="Dashboard" class="tabcontent">
@@ -90,21 +114,43 @@ body {font-family: "Lato", sans-serif;}
 
 <div id="Users" class="tabcontent">
   <h3>Users</h3>
-  <p>1.New Users
-     2.Existing Users 
+  <ul>
+    <li>Users</li>]
+    <?php
+      foreach($userIDs as $item){
+        echo $item . ", ";
+      }
+    ?>
+
+    <li>Drivers</li>
+    <?php
+      foreach($driverIDs as $x){
+        echo $x . ", ";
+      }
+    ?>
+  </ul> 
   </p>
 </div>
 
-<div id="Map" class="tabcontent">
-    <h3>Map</h3>
-    <p>Google Map</p>
-  </div>
-
   <div id="Ratings&Reviews" class="tabcontent">
-    <h3>Ratings & Reviews</h3>
-    <p>1.Ratings 
-       2.Reviews 
-    </p>
+    <h3>User & Driver Ratings</h3>
+     <p> Drivers: </p>
+
+     <?php  
+     foreach($driverRatings as $x => $val) {
+       echo "ID: " . $x . " RATING: " . $val;
+       echo "<br>";
+     }
+     ?>
+     <p> Users: </p>
+
+     <?php  
+     foreach($userRatings as $x => $val) {
+       echo "ID: " . $x . " Rating: " . $val;
+       echo "<br>";
+     }
+     ?>
+
   </div>
 
   <div id="Scheduled Rides" class="tabcontent">
@@ -112,12 +158,6 @@ body {font-family: "Lato", sans-serif;}
     <p>Future Scheduled Rides</p>
   </div>
 
-  <div id="Payments" class="tabcontent">
-    <h3>Payments</h3>
-    <p>1.Payment Managements
-       2.Payment Methods
-    </p>
-  </div>
 
 <div class="clearfix"></div>
 
