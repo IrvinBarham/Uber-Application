@@ -64,7 +64,7 @@ body {font-family: "Lato", sans-serif;}
   $adminIDs = array('boss');
   $userKeys = array('1');
   $driverKeys = array('2');
-  $AdminIDs = array('3');
+  $AdminKeys = array('3');
 
   $driverRatings = array('driver1' => 5,'driver2' => 1);
   $userRatings = array('user1' => 5);
@@ -96,6 +96,9 @@ body {font-family: "Lato", sans-serif;}
 <body>
 
 <h2>Administrator</h2>
+<nav>
+<a href="LoginPage.php"><small>Log Out</small> </a>
+</nav>
 <p>
     Rideshare On Demand:
 </p>
