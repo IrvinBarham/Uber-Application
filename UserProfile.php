@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <title>Rideshare Service</title>
@@ -25,10 +24,14 @@
             font-family: "Space Mono", monospace;
             font-size: 36px;
             padding: 3px;
+            color: white;
         }
 
         header {
             font-size: 36px;
+        }
+        p {
+            color: white;
         }
     </style>
 </head>
@@ -42,6 +45,16 @@
                     <a href="Home.php"><strong>Home</strong></a>
                 </nav>
             </header>
-        </div>
+            <h2> Edit Info </h2>
 
+            <form action="databaseconn.php" method="post">
+            <p>ID:</p> <input type="text" name="id"> <br>
+            <p>PASSWORD:</p>  <input type ="text" name="psw"> <br>
+            <p>EMAIL:</p>  <input type ="text" name="email"> <br>
+            <p>ADDRESS:</p>  <input type ="text" name="address"> <br>
+            <input type="submit">
+            </form>
+        </div>
 </body>
+
+                
