@@ -1,7 +1,3 @@
-
-
-
-
 <head>
 	<meta charset="UTF-8" />
 	<title> Rideshare | Login </title>
@@ -34,8 +30,52 @@ h1 {
 	</div>
 	<section id="login">
 	<div class="signin">
+
 		<h2> Sign in </h2>
-	<form action="Home.php" onsubmit="return validateSignin()" method="post" required>
+<?php
+// define variables and set to empty values
+$usersIDs = array('user1');
+$driversIDs = array('driver1', 'driver2');
+$adminIDs = array('boss');
+$userKeys = array('1');
+$driverKeys = array('2', '3');
+$adminKeys = array('4');
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+	$ID = $PSW = "";
+  	$ID= test_input($_POST["userID"]);
+ 	$PSW = test_input($_POST["key"]);
+	foreach($usersIDs as $x){
+		foreach($userKeys as $y){
+			if($x == $ID && $y == $PSW){
+				header('location: home.php');
+			}
+		}
+	}
+	foreach($driversIDs as $x){
+		foreach($driverKeys as $y){
+			if($x == $ID && $y == $PSW){
+				header('location: driverhomepage.php');
+			}
+		}
+	}
+	foreach($adminIDs as $x){
+		foreach($adminKeys as $y){
+			if($x == $ID && $y == $PSW){
+				header('location: Admin.php');
+			}
+		}
+	}
+}
+
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+ }
+?>
+	<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 		<label for="userID"><b>Username</b></label>
 		<input type="text" id="userID" name="userID" required>
 		<label for="key"><b>Password</b></label>
@@ -45,25 +85,25 @@ h1 {
 <script>
 	function validateSignIn() {
 		//List of Users
-		let userIDdata = ['user'];
-		let driverIDdata = ['driver'];
+		let userIDdata = ['user1'];
+		let driverIDdata = ['driver1', 'driver2'];
 		let AdminIDdata = ['boss'];
 		let userPASSdata = ['1'];
-        let driverPASSdata = ['2'];
-		let adminPASSdata = ['3'];
+        let driverPASSdata = ['2', '3'];
+		let adminPASSdata = ['4'];
 
         var id = document.getElementById("userID").value;
 		var pass = document.getElementByID("key").value;
 
-		Boolean flagID = false;
-		Boolean flagPass = false;
+		flagID = false;
+		flagPass = false;
 		
 		for (i = 0; i < userIDdata.length; i++) {
 			if (id.value.match(userIDdata[i])
 				flagID = true;
 		}
 		for (i = 0; i < userPASSdata.length; i++){
-			if (pass.value.match(userPassdata[i])
+			if (id.value.match(userPassdata[i])
 				flagPass = true;
 		}
 		if (flagID = 'true' && flagPass = 'true') {
