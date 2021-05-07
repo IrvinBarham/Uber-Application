@@ -148,7 +148,18 @@ body {
                     <label for="favorites" class="col-xs-2 control-label"><i class="far fa-dot-circle"></i></label>
                     <div class="col-xs-4">
                         <input type="text" id="favorites" placeholder="Search Locations" class="form-control">
-                    </div>
+                       <input type="button" value="Submit" onClick="pr()"> 
+                       <div>
+                       Favorites: <span id="result"></span>
+                       
+                
+                <script>
+          function pr() {
+            document.getElementById("result").innerHTML = document.getElementById('favorites').value;
+          }
+        </script>
+                    
+               </div>
                </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -231,6 +242,7 @@ totalBillWithTip.value =finalBill.toFixed(2);
 document.getElementById('results').style.display='block'
 }
 //add favorite locations
+
 </script>
   </body>
 </html>
