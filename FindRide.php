@@ -141,7 +141,7 @@ body {
     	<div>
         	<h2>Favorite Locations</h2>
         </div>
-        <p>Add any location to Favorites for quick access</p>
+        <p>Add any location to Favorites for quick access!</p>
    	</div>
     <form class="form-horizontal">
                 <div class="form-group">
